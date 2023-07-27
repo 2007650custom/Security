@@ -28,11 +28,11 @@ for /F "delims=" %%f in (c:\crack\passlist.txt) do (
 REM The line below will show every password as it is being tested, this can be noisy so only uncomment if you are troubleshooting. 
 REM echo %%f
 
-REM	If using 7zip file, use the line below, and comment out the RAR line below.
+REM	If using 7zip file, use the line below, and comment out the RAR line.
 7z l "c:\crack\files\file00.7z.001" -p"%%f"  | findstr "Path ">NUL && echo found "%%f" > c:\crack\foundpass.txt && GOTO SUCCESS
 
-REM	If using RAR file, use the line below, and comment out the 7zip line above.
-rem unrar l "c:\crack\files\file01.part1.rar" -p"%%f" | findstr "Attributes">NUL && echo found "%%f" > c:\crack\foundpass.txt && GOTO SUCCESS
+REM	If using RAR file, use the line below, and comment out the 7zip line.
+REM unrar l "c:\crack\files\file01.part1.rar" -p"%%f" | findstr "Attributes">NUL && echo found "%%f" > c:\crack\foundpass.txt && GOTO SUCCESS
 
 )
 
